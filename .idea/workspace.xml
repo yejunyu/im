@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e425f7de-0789-4820-bb6b-368ada033265" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/GatewayInstanceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/RequestHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/ClientManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/RequestHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/push/PushManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/proto/Authentication.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/proto/proto.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/test/java/com/yejunyu/im/sdk/ImClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/test/java/com/yejunyu/im/sdk/ProtocalTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="b9p0p3jc" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HoTl901xdEsOWwHgkMpLYHCs0F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;0d22e131-f6a1-4a3e-ab7a-059bb52ce3f5&quot;: &quot;{\&quot;id\&quot;:\&quot;0d22e131-f6a1-4a3e-ab7a-059bb52ce3f5\&quot;,\&quot;name\&quot;:\&quot;local\&quot;,\&quot;port\&quot;:\&quot;6379\&quot;,\&quot;url\&quot;:\&quot;127.0.0.1\&quot;}&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dbCount:0d22e131-f6a1-4a3e-ab7a-059bb52ce3f5&quot;: &quot;16&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/idea/im/im/protocal/src/main/java/com/yejunyu/im/protocal&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;mongo&quot;
+    ],
+    &quot;connectionIds&quot;: [
+      &quot;0d22e131-f6a1-4a3e-ab7a-059bb52ce3f5&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.yejunyu.im.gateway.tcp.dispatcher" />
+      <recent name="com.yejunyu.im.dispathcer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\idea\im\im\protocal\src\main\java\com\yejunyu\im\protocal" />
+      <recent name="D:\code\idea\im\im\protocal\src\main\java" />
+      <recent name="D:\code\idea\im\im\gateway-tcp\src\main\java\com\yejunyu\im\protocal" />
+      <recent name="D:\code\idea\im\im\gateway-tcp\src\main\java\com\yejunyu\im" />
+      <recent name="D:\code\idea\im\im\gateway-tcp\src\main\proto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\idea\im\im\protocal\src\main\java\com\yejunyu\im\protocal" />
+      <recent name="D:\code\idea\im\im\protocal\src\main" />
+      <recent name="D:\code\idea\im\im\sdk\src\main" />
+      <recent name="D:\code\idea\im\im" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yejunyu.im.sdk" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ImClientTest">
+    <configuration name="GatewayTcpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yejunyu.im.gateway.tcp.GatewayTcpServer" />
+      <module name="gateway-tcp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yejunyu.im.gateway.tcp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayTcpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yejunyu.im.gateway.tcp.GatewayTcpServer" />
+      <module name="gateway-tcp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yejunyu.im.gateway.tcp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yejunyu.im.sdk.ImClientTest" />
+      <module name="sdk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yejunyu.im.sdk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProtocalTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yejunyu.im.sdk.ProtocalTest" />
+      <module name="sdk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yejunyu.im.sdk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="im" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="im" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ImClientTest" />
+        <item itemvalue="Application.GatewayTcpServer" />
+        <item itemvalue="Application.ProtocalTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e425f7de-0789-4820-bb6b-368ada033265" name="Changes" comment="" />
+      <created>1668950587614</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668950587614</updated>
+      <workItem from="1668950588962" duration="4365000" />
+      <workItem from="1668995163575" duration="6727000" />
+      <workItem from="1669042050637" duration="1075000" />
+      <workItem from="1669043234617" duration="3909000" />
+      <workItem from="1669079010653" duration="203000" />
+      <workItem from="1669082688992" duration="10000" />
+      <workItem from="1669183126815" duration="8232000" />
+      <workItem from="1669215990695" duration="619000" />
+      <workItem from="1669216691543" duration="1358000" />
+      <workItem from="1669364707014" duration="9676000" />
+      <workItem from="1669427802173" duration="6099000" />
+      <workItem from="1669553873464" duration="4784000" />
+      <workItem from="1669622723154" duration="31000" />
+      <workItem from="1669622773842" duration="17000" />
+      <workItem from="1669735814263" duration="3011000" />
+      <workItem from="1669771530238" duration="663000" />
+      <workItem from="1669788960658" duration="1414000" />
+      <workItem from="1669950207590" duration="5000" />
+      <workItem from="1671009617968" duration="3875000" />
+      <workItem from="1671071830533" duration="460000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
