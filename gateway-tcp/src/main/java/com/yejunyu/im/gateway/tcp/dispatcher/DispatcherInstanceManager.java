@@ -29,7 +29,7 @@ public class DispatcherInstanceManager {
      * 静态化分发系统实例地址列表
      */
     static {
-//        dispatcherInstanceAddressList.add(new DispatcherInstanceAddress("localhost", "127.0.0.1", 8090));
+        dispatcherInstanceAddressList.add(new DispatcherInstanceAddress("localhost", "127.0.0.1", 8090));
     }
 
     private DispatcherInstanceManager() {
@@ -77,23 +77,20 @@ public class DispatcherInstanceManager {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel socketChannel) throws Exception {
-                        ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
-                        socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
-                        socketChannel.pipeline().addLast(new StringDecoder());
+//                        ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
+//                        socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
+//                        socketChannel.pipeline().addLast(new StringDecoder());
                         socketChannel.pipeline().addLast(new DispatcherInstanceHandler());
                     }
                 });
         ChannelFuture channelFuture = client.connect(dispatcherInstanceAddress.getIp(), dispatcherInstanceAddress.getPort());
         // 给异化的连接加上监听器
-        channelFuture.addListener(new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                if (channelFuture.isSuccess()) {
-                    dispatcherInstanceList.add((SocketChannel) channelFuture.channel());
-                } else {
-                    channelFuture.channel().close();
-                    threadGroup.shutdownGracefully();
-                }
+        channelFuture.addListener((ChannelFutureListener) channelFuture1 -> {
+            if (channelFuture1.isSuccess()) {
+                dispatcherInstanceList.add((SocketChannel) channelFuture1.channel());
+            } else {
+                channelFuture1.channel().close();
+                threadGroup.shutdownGracefully();
             }
         });
         channelFuture.sync();

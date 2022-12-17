@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Description //TODO
  * @Date 2022/11/21
  **/
-public class ClientManager {
+public class SessionManager {
 
     /**
      * 存储uid到客户端的映射
@@ -20,14 +20,14 @@ public class ClientManager {
      */
     private final ConcurrentHashMap<String, String> channelId2UId = new ConcurrentHashMap<>();
 
-    private ClientManager() {
+    private SessionManager() {
     }
 
     public static class Singleton {
-        static ClientManager instance = new ClientManager();
+        static SessionManager instance = new SessionManager();
     }
 
-    public static ClientManager getInstance() {
+    public static SessionManager getInstance() {
         return Singleton.instance;
     }
 

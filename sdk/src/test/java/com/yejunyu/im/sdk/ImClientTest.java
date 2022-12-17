@@ -11,8 +11,8 @@ public class ImClientTest {
 
         ImClient imClient = new ImClient();
         imClient.connect("127.0.0.1", 8080);
-//        imClient.authenticate("test002", "test002_token");
-        imClient.send("test001", "test001发送过来的消息");
+        imClient.authenticate("test002", "test002_token");
+//        imClient.send("test001", "test001发送过来的消息");
 
         while (true) {
             Thread.sleep(1000L);

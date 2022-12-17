@@ -76,7 +76,7 @@ public class Message {
         this.sequence = byteBuf.readInt();
         this.bodyLength = byteBuf.readInt();
         this.body = new byte[bodyLength];
-        buffer.readBytes(body);
+        byteBuf.readBytes(body);
         this.buffer = byteBuf;
     }
 

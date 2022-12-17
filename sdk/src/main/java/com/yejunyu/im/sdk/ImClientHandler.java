@@ -1,5 +1,11 @@
 package com.yejunyu.im.sdk;
 
+import com.yejunyu.im.common.CMD;
+import com.yejunyu.im.common.Constants;
+import com.yejunyu.im.common.Message;
+import com.yejunyu.im.common.Response;
+import com.yejunyu.im.protocal.Authentication;
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -19,8 +25,20 @@ public class ImClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         // 服务端发送过来的消息就是在这里收到的
-        String message = (String) msg;
-        System.out.println("收到TCP接入系统发送的消息：" + message);
+        Message message = new Message((ByteBuf) msg);
+        System.out.println("收到TCP接入系统发送过来的消息，消息类型为：" + message.getMessageType());
+        if (message.getMessageType() == Constants.MESSAGE_TYPE_RESPONSE) {
+            Response response = message.toResponse();
+            if (response.getRequestCmd() == CMD.AUTHENTICATE.getType()) {
+                Authentication.Response authenticateResponse = Authentication.Response.parseFrom(message.getBody());
+                System.out.println("认证请求收到响应：" + authenticateResponse);
+            }
+        }
+    }
+
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        ctx.flush();
     }
 
     @Override

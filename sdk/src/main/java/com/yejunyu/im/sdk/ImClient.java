@@ -1,5 +1,7 @@
 package com.yejunyu.im.sdk;
 
+import com.yejunyu.im.common.CMD;
+import com.yejunyu.im.common.Constants;
 import com.yejunyu.im.protocal.Authentication;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
@@ -31,15 +33,6 @@ public class ImClient {
      */
     private SocketChannel socketChannel;
 
-    /**
-     * 头部信息
-     */
-    private static final int HEADER_LENGTH = 20;
-    private static final String DELIMITER = "$_";
-    private static final int APP_SDK_VERSION = 1;
-    private static final int REQUEST_TYPE_AUTHENTICATE = 1;
-    private static final int SEQUENCE = 1;
-
 
     public void connect(String host, int port) throws Exception {
         this.threadGroup = new NioEventLoopGroup();
@@ -51,24 +44,21 @@ public class ImClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel socketChannel) throws Exception {
-                        ByteBuf delimiter = Unpooled.copiedBuffer(DELIMITER.getBytes());
-                        socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
+//                        ByteBuf delimiter = Unpooled.copiedBuffer(DELIMITER.getBytes());
+//                        socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
 //                        socketChannel.pipeline().addLast(new StringDecoder());
                         socketChannel.pipeline().addLast(new ImClientHandler());
                     }
                 });
         System.out.println("完成netty客户端的配置");
         ChannelFuture future = client.connect(host, port);
-        future.addListener(new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                if (channelFuture.isSuccess()) {
-                    socketChannel = (SocketChannel) channelFuture.channel();
-                    System.out.println("跟TCP接入系统完成长连接的建立");
-                } else {
-                    channelFuture.channel().close();
-                    threadGroup.shutdownGracefully();
-                }
+        future.addListener((ChannelFutureListener) channelFuture -> {
+            if (channelFuture.isSuccess()) {
+                socketChannel = (SocketChannel) channelFuture.channel();
+                System.out.println("跟TCP接入系统完成长连接的建立");
+            } else {
+                channelFuture.channel().close();
+                threadGroup.shutdownGracefully();
             }
         });
         future.sync();
@@ -95,14 +85,15 @@ public class ImClient {
         Authentication.Request request = builder.setUid(uid).setToken(token)
                 .setTimestamp(System.currentTimeMillis()).build();
         byte[] bytes = request.toByteArray();
-        ByteBuf byteBuf = Unpooled.buffer(HEADER_LENGTH + bytes.length + DELIMITER.length());
-        byteBuf.writeInt(HEADER_LENGTH);
-        byteBuf.writeInt(APP_SDK_VERSION);
-        byteBuf.writeInt(REQUEST_TYPE_AUTHENTICATE);
-        byteBuf.writeInt(SEQUENCE);
+        ByteBuf byteBuf = Unpooled.buffer(Constants.HEADER_LENGTH + bytes.length);
+        byteBuf.writeInt(Constants.HEADER_LENGTH);
+        byteBuf.writeInt(Constants.APP_SDK_VERSION_1);
+        byteBuf.writeInt(Constants.MESSAGE_TYPE_REQUEST);
+        byteBuf.writeInt(CMD.AUTHENTICATE.getType());
+        byteBuf.writeInt(Constants.SEQUENCE_DEFAULT);
         byteBuf.writeInt(bytes.length);
         byteBuf.writeBytes(bytes);
-        byteBuf.writeBytes(DELIMITER.getBytes());
+//        byteBuf.writeBytes(DELIMITER.getBytes());
         return byteBuf;
     }
 

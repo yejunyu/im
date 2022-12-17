@@ -4,40 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e425f7de-0789-4820-bb6b-368ada033265" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/GatewayInstanceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/RequestHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/ClientManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/RequestHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/push/PushManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/proto/Authentication.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/proto/proto.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/test/java/com/yejunyu/im/sdk/ImClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/test/java/com/yejunyu/im/sdk/ProtocalTest.java" afterDir="false" />
+    <list default="true" id="e425f7de-0789-4820-bb6b-368ada033265" name="Changes" comment="feat(core): init">
+      <change afterPath="$PROJECT_DIR$/dispatcher/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/protocal/Authentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/RequestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/ChannelUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/RequestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/RequestHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/test/java/com/yejunyu/im/sdk/ImClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/test/java/com/yejunyu/im/sdk/ImClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +105,20 @@
       <recent name="com.yejunyu.im.sdk" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ImClientTest">
+  <component name="RunManager" selected="Application.GatewayTcpServer">
+    <configuration name="DispatcherServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yejunyu.im.dispathcer.DispatcherServer" />
+      <module name="dispatcher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yejunyu.im.dispathcer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GatewayTcpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yejunyu.im.gateway.tcp.GatewayTcpServer" />
       <module name="gateway-tcp" />
@@ -194,6 +194,7 @@
       <list>
         <item itemvalue="Application.ImClientTest" />
         <item itemvalue="Application.GatewayTcpServer" />
+        <item itemvalue="Application.DispatcherServer" />
         <item itemvalue="Application.ProtocalTest" />
       </list>
     </recent_temporary>
@@ -226,7 +227,16 @@
       <workItem from="1669950207590" duration="5000" />
       <workItem from="1671009617968" duration="3875000" />
       <workItem from="1671071830533" duration="460000" />
+      <workItem from="1671204925961" duration="4276000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(core): init">
+      <created>1671205216707</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671205216707</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +252,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(core): init" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(core): init" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

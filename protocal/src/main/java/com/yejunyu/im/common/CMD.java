@@ -15,7 +15,7 @@ public enum CMD {
      * 用户认证请求
      */
     AUTHENTICATE(1, "用户认证"),
-    ;
+    OTHER(99, "其他命令");
 
     private final int type;
     private final String desc;
