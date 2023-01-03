@@ -14,7 +14,7 @@ public class SessionManager {
     /**
      * 存储uid到客户端的映射
      */
-    private final ConcurrentHashMap<String, SocketChannel> clients = new ConcurrentHashMap();
+    private final ConcurrentHashMap<String, SocketChannel> clients = new ConcurrentHashMap<>();
     /**
      * channelId到uid的映射
      */

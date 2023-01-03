@@ -35,7 +35,6 @@ public class DispatcherServer {
             server.group(connectionThreadGroup, ioThreadGroup)
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
-
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
 //                            ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());

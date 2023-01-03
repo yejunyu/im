@@ -1,7 +1,6 @@
 package com.yejunyu.im.dispathcer;
 
 import io.netty.channel.socket.SocketChannel;
-import lombok.Setter;
 import lombok.experimental.UtilityClass;
 
 /**

@@ -12,7 +12,7 @@ public class Request extends Message {
         super(byteBuf);
     }
 
-    public Request(int appSdkVersion, int requestType, int sequence, byte[] body) {
-        super(appSdkVersion, Constants.MESSAGE_TYPE_REQUEST, requestType, sequence, body);
+    public Request(int appSdkVersion, int requestCmd, int sequence, byte[] body) {
+        super(appSdkVersion, Constants.MESSAGE_TYPE_REQUEST, requestCmd, sequence, body);
     }
 }

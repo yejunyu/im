@@ -1,5 +1,7 @@
 package com.yejunyu.im.gateway.tcp;
 
+import com.alibaba.fastjson2.JSON;
+import com.google.common.collect.ImmutableMap;
 import com.yejunyu.im.common.*;
 import com.yejunyu.im.protocal.Authentication;
 import io.netty.buffer.ByteBuf;
@@ -7,6 +9,10 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.socket.SocketChannel;
+import jdk.nashorn.internal.ir.debug.JSONWriter;
+import redis.clients.jedis.Jedis;
+
+import java.util.Map;
 
 /**
  * @Author yjy
@@ -54,12 +60,18 @@ public class GatewayTcpHandler extends ChannelInboundHandlerAdapter {
                 if (authenticateResponse.getStatus() == Constants.RESPONSE_STATUS_OK) {
                     sessionManager.addClient(authenticateResponse.getUid(), (SocketChannel) ctx.channel());
                     // 记录分布式session
-
+                    String sessionKey = "session_" + authenticateRequest.getUid();
+                    Map<String, Object> sessionValue = ImmutableMap.of(
+                            "token", authenticateRequest.getToken(),
+                            "timestamp", authenticateRequest.getTimestamp()
+                    );
+                    Jedis jedis = JedisManager.getInstance().getJedis();
+                    jedis.set(sessionKey, JSON.toJSONString(sessionValue));
                 }
                 Response response = new Response(request, authenticateResponse.toByteArray());
                 ctx.writeAndFlush(response);
                 System.out.println("返回响应给用户：" + authenticateResponse);
-            }else {
+            } else {
 
             }
         }

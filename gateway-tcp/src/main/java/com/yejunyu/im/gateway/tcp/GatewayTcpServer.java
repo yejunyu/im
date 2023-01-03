@@ -16,7 +16,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @Date 2022/11/20
  **/
 public class GatewayTcpServer {
-    public static int PORT = 8080;
+    public static int PORT = 8081;
 
     public static void main(String[] args) {
         // 启动消息推送组件
