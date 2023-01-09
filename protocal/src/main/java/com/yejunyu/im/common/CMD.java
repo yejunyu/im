@@ -15,6 +15,7 @@ public enum CMD {
      * 用户认证请求
      */
     AUTHENTICATE(1, "用户认证"),
+    SEND_MESSAGE(2, "发送消息"),
     OTHER(99, "其他命令");
 
     private final int type;

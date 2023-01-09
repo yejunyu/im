@@ -1,1 +1,1 @@
-protoc --java_out=./ ./Authentication.proto
+protoc --java_out=./ ./*.proto

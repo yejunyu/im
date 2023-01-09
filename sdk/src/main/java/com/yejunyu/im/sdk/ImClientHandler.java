@@ -5,6 +5,7 @@ import com.yejunyu.im.common.Constants;
 import com.yejunyu.im.common.Message;
 import com.yejunyu.im.common.Response;
 import com.yejunyu.im.protocal.Authentication;
+import com.yejunyu.im.protocal.MessageSend;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -29,9 +30,14 @@ public class ImClientHandler extends ChannelInboundHandlerAdapter {
         System.out.println("收到TCP接入系统发送过来的消息，消息类型为：" + message.getMessageType());
         if (message.getMessageType() == Constants.MESSAGE_TYPE_RESPONSE) {
             Response response = message.toResponse();
+
             if (response.getRequestCmd() == CMD.AUTHENTICATE.getType()) {
-                Authentication.Response authenticateResponse = Authentication.Response.parseFrom(message.getBody());
+                Authentication.Response authenticateResponse = Authentication.Response.parseFrom(response.getBody());
                 System.out.println("认证请求收到响应：" + authenticateResponse);
+            }
+            if (response.getRequestCmd() == CMD.SEND_MESSAGE.getType()){
+                MessageSend.Response messageSendResponse = MessageSend.Response.parseFrom(response.getBody());
+                System.out.println("客户端收到发送单聊消息的响应，messageId= " + messageSendResponse.getMessageId());
             }
         }
     }

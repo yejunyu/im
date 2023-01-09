@@ -16,9 +16,9 @@ public class SessionManager {
      */
     private final ConcurrentHashMap<String, SocketChannel> clients = new ConcurrentHashMap<>();
     /**
-     * channelId到uid的映射
+     * channel到uid的映射
      */
-    private final ConcurrentHashMap<String, String> channelId2UId = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<SocketChannel, String> channel2UId = new ConcurrentHashMap<>();
 
     private SessionManager() {
     }
@@ -38,7 +38,7 @@ public class SessionManager {
      * @param channel
      */
     public void addClient(String uid, SocketChannel channel) {
-        channelId2UId.put(channel.id().asLongText(), uid);
+        channel2UId.put(channel, uid);
         clients.put(uid, channel);
     }
 
@@ -68,8 +68,8 @@ public class SessionManager {
      * @param channel
      */
     public void removeClient(SocketChannel channel) {
-        String uid = channelId2UId.get(channel.id().asLongText());
-        channelId2UId.remove(channel.id().asLongText());
+        String uid = channel2UId.get(channel);
+        channel2UId.remove(channel);
         clients.remove(uid);
     }
 }

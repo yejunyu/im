@@ -2,7 +2,9 @@ package com.yejunyu.im.sdk;
 
 import com.yejunyu.im.common.CMD;
 import com.yejunyu.im.common.Constants;
+import com.yejunyu.im.common.Request;
 import com.yejunyu.im.protocal.Authentication;
+import com.yejunyu.im.protocal.MessageSend;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -25,7 +27,7 @@ public class ImClient {
      */
     private EventLoopGroup threadGroup;
     /**
-     * 代表的是Netty客户端
+     * 代表的是本客户端
      */
     private Bootstrap client;
     /**
@@ -52,6 +54,7 @@ public class ImClient {
                 });
         System.out.println("完成netty客户端的配置");
         ChannelFuture future = client.connect(host, port);
+        System.out.println("发起对tcp接入系统的连接。。。");
         future.addListener((ChannelFutureListener) channelFuture -> {
             if (channelFuture.isSuccess()) {
                 socketChannel = (SocketChannel) channelFuture.channel();
@@ -62,6 +65,18 @@ public class ImClient {
             }
         });
         future.sync();
+    }
+
+    /**
+     * 通过iplist服务得到可用的ip重连
+     */
+    public void reconnect() throws Exception {
+        String uid = "";
+        String token = "";
+        String ip = "";
+        int port = -1;
+        connect(ip, port);
+        authenticate(uid, token);
     }
 
     /**
@@ -93,22 +108,24 @@ public class ImClient {
         byteBuf.writeInt(Constants.SEQUENCE_DEFAULT);
         byteBuf.writeInt(bytes.length);
         byteBuf.writeBytes(bytes);
-//        byteBuf.writeBytes(DELIMITER.getBytes());
         return byteBuf;
     }
 
     /**
-     * 发送消息
+     * 发送单聊消息
      *
-     * @param uid
-     * @param message
+     * @param senderId   发送uid
+     * @param receiverId
      */
-    public void send(String uid, String message) {
-        byte[] messageBytes = (message + "|" + uid + "$_").getBytes();
-        ByteBuf byteBuf = Unpooled.copiedBuffer(messageBytes);
-        socketChannel.writeAndFlush(byteBuf);
-        System.out.println("向TCP接入系统发送第一条消息，推送给test002用户");
-
+    public void sendMsg(String senderId, String receiverId, String content) {
+        MessageSend.Request.Builder builder = MessageSend.Request.newBuilder();
+        builder.setSenderId(senderId)
+                .setReceiverId(receiverId)
+                .setContent(content);
+        Request request = new Request(Constants.APP_SDK_VERSION_1, CMD.SEND_MESSAGE.getType(), Constants.SEQUENCE_DEFAULT,
+                builder.build().toByteArray());
+        System.out.println("客户端向接入系统发送一条单聊消息......");
+        socketChannel.writeAndFlush(request.getBuffer());
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.yejunyu.im.common;
 
+import com.yejunyu.im.protocal.Authentication;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import lombok.Getter;

@@ -1,7 +1,10 @@
 package com.yejunyu.im.gateway.tcp;
 
 import com.yejunyu.im.common.Constants;
+import com.yejunyu.im.gateway.tcp.dispatcher.DispatcherInstance;
+import com.yejunyu.im.gateway.tcp.dispatcher.DispatcherInstanceManager;
 import com.yejunyu.im.protocal.Authentication;
+import com.yejunyu.im.protocal.MessageSend;
 
 /**
  * @Author yjy
@@ -62,7 +65,14 @@ public class RequestHelper {
         return true;
     }
 
-    public void otherSend(){
+    public void sendMessage(MessageSend.Request request) {
+        DispatcherInstance dispatcherInstance = DispatcherInstanceManager.getInstance().chooseDispatcherInstance();
+        dispatcherInstance.sendMessage(request);
+        System.out.println("向随机挑选的分发系统（地址为：" + dispatcherInstance.getSocketChannel() + "）发送单聊消息请求");
+
+    }
+
+    public void otherSend() {
 
     }
 }

@@ -25,7 +25,7 @@ public class DispatcherHandler extends ChannelInboundHandlerAdapter {
         String channelId = ChannelUtil.getChannelId(channel);
         GatewayInstanceManager gatewayInstanceManager = GatewayInstanceManager.getInstance();
         gatewayInstanceManager.addGatewayInstance(channelId, channel);
-        System.out.println("已经跟TCP接入系统建立连接，TCP接入系统地址为：" + channel.remoteAddress());
+        System.out.println("已经跟gateway接入系统建立连接，TCP接入系统地址为：" + channel.remoteAddress());
     }
 
     /**
@@ -40,7 +40,7 @@ public class DispatcherHandler extends ChannelInboundHandlerAdapter {
         String channelId = ChannelUtil.getChannelId(channel);
         GatewayInstanceManager gatewayInstanceManager = GatewayInstanceManager.getInstance();
         gatewayInstanceManager.removeGatewayInstance(channelId);
-        System.out.println("跟TCP接入系统的连接断开，地址为：" + channel);
+        System.out.println("跟gateway接入系统的连接断开，地址为：" + channel);
     }
 
     /**
@@ -53,9 +53,13 @@ public class DispatcherHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = new Message((ByteBuf) msg);
+        System.out.println("收到一条消息，消息类型为：" + message.getRequestCmd());
+
         if (message.getMessageType() == Constants.MESSAGE_TYPE_REQUEST) {
             Request request = message.toRequest();
+            if (request.getRequestCmd()== CMD.SEND_MESSAGE.getType()){
 
+            }
             ctx.writeAndFlush(request.getBuffer());
             System.out.println("返回响应给TCP接入系统：" + request);
 

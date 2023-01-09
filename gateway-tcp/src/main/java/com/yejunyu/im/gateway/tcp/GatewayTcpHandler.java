@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.google.common.collect.ImmutableMap;
 import com.yejunyu.im.common.*;
 import com.yejunyu.im.protocal.Authentication;
+import com.yejunyu.im.protocal.MessageSend;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
@@ -67,11 +68,15 @@ public class GatewayTcpHandler extends ChannelInboundHandlerAdapter {
                     );
                     Jedis jedis = JedisManager.getInstance().getJedis();
                     jedis.set(sessionKey, JSON.toJSONString(sessionValue));
+                    System.out.println(sessionKey + " 存入redis中");
                 }
                 Response response = new Response(request, authenticateResponse.toByteArray());
                 ctx.writeAndFlush(response);
                 System.out.println("返回响应给用户：" + authenticateResponse);
-            } else {
+            } else if (request.getRequestCmd() == CMD.SEND_MESSAGE.getType()) {
+                MessageSend.Request messageSendRequest = MessageSend.Request.parseFrom(request.getBody());
+                requestHelper.sendMessage(messageSendRequest);
+                System.out.println(messageSendRequest.getSenderId() + " 客户端发送过来的单聊消息......" + messageSendRequest.getContent());
 
             }
         }

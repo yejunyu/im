@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// 生成多个类,还是一个大类包含内部类
+option java_multiple_files = false;
+
+option java_package = "com.yejunyu.im.protocal";
+
+// 外层包类名
+option java_outer_classname = "MessageReceive";
+
+// proto包名
+package im;
+
+
+message Request {
+    string sender_id = 1;
+    string receiver_id = 2;
+    string content = 3;
+    string message_id = 4;
+    int64 timestamp = 5;
+
+}
+
+message Response {
+    string message_id = 1;
+}
+
