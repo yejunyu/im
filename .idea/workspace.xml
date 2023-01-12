@@ -5,39 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e425f7de-0789-4820-bb6b-368ada033265" name="Changes" comment="feat(core): gateway和dispatcher分发系统">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/58735787-b3f2-4cce-9f1d-55b2ccdacbc7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cd29376a-1234-436b-adf8-3db42ec12c47.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cd29376a-1234-436b-adf8-3db42ec12c47/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cd29376a-1234-436b-adf8-3db42ec12c47/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cd29376a-1234-436b-adf8-3db42ec12c47/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cd29376a-1234-436b-adf8-3db42ec12c47/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cd29376a-1234-436b-adf8-3db42ec12c47/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/KafkaManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-tcp/src/test/java/KafkaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/protocal/MessageReceive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/protocal/MessageSend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/proto/MessageReceive.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protocal/src/main/proto/MessageSend.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/biz/src/main/java/com/yejunyu/im/biz/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/JedisManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/biz/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/GatewayTcpHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/RequestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/RequestHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/SessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/dispatcher/DispatcherInstanceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocal/src/main/proto/proto.sh" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/proto/proto.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/GatewayInstanceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/GatewayInstanceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/KafkaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/KafkaManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/JedisManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/JedisManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/MessageSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/ImSend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +101,7 @@
       <recent name="D:\code\idea\im\im\sdk\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yejunyu.im.dispathcer" />
       <recent name="com.yejunyu.im.sdk" />
     </key>
   </component>
@@ -243,6 +226,9 @@
       <workItem from="1672840147994" duration="4813000" />
       <workItem from="1672933229308" duration="3398000" />
       <workItem from="1673189468037" duration="2839000" />
+      <workItem from="1673277327864" duration="3023000" />
+      <workItem from="1673448374881" duration="2269000" />
+      <workItem from="1673531816490" duration="8467000" />
     </task>
     <task id="LOCAL-00001" summary="feat(core): init">
       <created>1671205216707</created>
@@ -265,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672760118131</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat(core): gateway和dispatcher分发系统">
+      <created>1673277617026</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673277617026</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

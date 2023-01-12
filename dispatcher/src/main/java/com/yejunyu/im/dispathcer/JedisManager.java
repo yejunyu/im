@@ -1,4 +1,4 @@
-package com.yejunyu.im.gateway.tcp;
+package com.yejunyu.im.dispathcer;
 
 import redis.clients.jedis.Jedis;
 
@@ -14,6 +14,7 @@ public class JedisManager {
         jedis = new Jedis("127.0.0.1");
         jedis.auth("123456");
     }
+
 
     static class Singleton {
         public static JedisManager instance = new JedisManager();

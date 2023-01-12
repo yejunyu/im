@@ -41,4 +41,14 @@ public class GatewayInstanceManager {
     public void removeGatewayInstance(String channelId) {
         gatewayInstances.remove(channelId);
     }
+
+    /**
+     * 获取接入实例
+     *
+     * @param channelId channelId
+     * @return 接入实例
+     */
+    public SocketChannel getGatewayInstance(String channelId) {
+        return gatewayInstances.get(channelId);
+    }
 }

@@ -41,4 +41,9 @@ public class Constants {
      * 响应状态码: 未知
      */
     public static final int RESPONSE_STATUS_UNKNOWN = -1;
+
+    public static final String SEND_MSG_TOPIC = "send_msg";
+
+    public static final String SEND_MSG_RESPONSE_TOPIC = "send_msg_response";
+
 }

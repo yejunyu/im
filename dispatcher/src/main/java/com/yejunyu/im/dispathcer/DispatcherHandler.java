@@ -1,11 +1,16 @@
 package com.yejunyu.im.dispathcer;
 
+import com.alibaba.fastjson2.JSON;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.yejunyu.im.common.*;
 import com.yejunyu.im.protocal.Authentication;
+import com.yejunyu.im.protocal.MessageSend;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.socket.SocketChannel;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
 
 /**
  * @Author yjy
@@ -57,16 +62,13 @@ public class DispatcherHandler extends ChannelInboundHandlerAdapter {
 
         if (message.getMessageType() == Constants.MESSAGE_TYPE_REQUEST) {
             Request request = message.toRequest();
-            if (request.getRequestCmd()== CMD.SEND_MESSAGE.getType()){
-
+            if (request.getRequestCmd() == CMD.SEND_MESSAGE.getType()) {
+                sendMessage(ctx, request);
             }
-            ctx.writeAndFlush(request.getBuffer());
-            System.out.println("返回响应给TCP接入系统：" + request);
-
-
         }
 
     }
+
 
     /**
      * 处理完毕一个请求
@@ -90,5 +92,32 @@ public class DispatcherHandler extends ChannelInboundHandlerAdapter {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         cause.printStackTrace();
         ctx.close();
+    }
+
+    /**
+     * 分发系统发出单聊消息
+     *
+     * @param ctx
+     * @param request
+     */
+    private void sendMessage(ChannelHandlerContext ctx, Request request) throws InvalidProtocolBufferException {
+        SocketChannel channel = (SocketChannel) ctx.channel();
+        String channelId = ChannelUtil.getChannelId(channel);
+        MessageSend.Request messageSendRequest = MessageSend.Request.parseFrom(request.getBody());
+        ImSend imSend = new ImSend();
+        imSend.setSenderId(messageSendRequest.getSenderId());
+        imSend.setReceiverId(messageSendRequest.getReceiverId());
+        imSend.setContent(messageSendRequest.getContent());
+        imSend.setCmd(CMD.SEND_MESSAGE.getType());
+        imSend.setSequence(request.getSequence());
+        imSend.setChannelId(channelId);
+
+        // 消息发送到kafka去
+        KafkaManager kafkaManager = KafkaManager.getInstance();
+        KafkaProducer<String, String> producer = kafkaManager.getProducer();
+
+        ProducerRecord<String, String> record = new ProducerRecord<>(Constants.SEND_MSG_TOPIC, JSON.toJSONString(imSend));
+        producer.send(record);
+
     }
 }

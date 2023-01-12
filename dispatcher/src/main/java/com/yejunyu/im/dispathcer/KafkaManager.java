@@ -1,6 +1,8 @@
 package com.yejunyu.im.dispathcer;
 
 import com.alibaba.fastjson2.JSON;
+import com.yejunyu.im.common.CMD;
+import com.yejunyu.im.common.ImSend;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -38,6 +40,7 @@ public class KafkaManager {
 
     /**
      * 获取kafka
+     *
      * @return
      */
     public KafkaProducer<String, String> getProducer() {
@@ -47,20 +50,24 @@ public class KafkaManager {
     /**
      * 初始化
      */
-    public void init(){
+    public void init() {
         new Thread(() -> {
             Properties properties = new Properties();
             properties.setProperty("bootstrap.servers", "127.0.0.1:9092");
-            properties.setProperty("group.id","dispatcher_group");
+            properties.setProperty("group.id", "dispatcher_group");
             properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
             properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 
-            KafkaConsumer<String ,String > consumer = new KafkaConsumer<>(properties);
+            KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
             consumer.subscribe(Arrays.asList("send_message_response"));
-            while (true){
+            while (true) {
                 ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(1L));
                 for (ConsumerRecord<String, String> record : records) {
-                    
+                    ImSend imSend = JSON.parseObject(record.value(), ImSend.class);
+                    int cmd = imSend.getCmd();
+                    if (cmd == CMD.SEND_MESSAGE.getType()) {
+
+                    }
                 }
 
             }

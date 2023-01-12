@@ -8,7 +8,9 @@ import lombok.Data;
  * @Date 2023/1/9
  **/
 @Data
-public class MessageSend {
+public class ImSend {
+
+    private long messageId;
 
     private String senderId;
 
@@ -21,4 +23,6 @@ public class MessageSend {
     private int sequence;
 
     private String channelId;
+
+    private long timestamp;
 }
