@@ -16,6 +16,18 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * @Date 2022/11/20
  **/
 public class ImClientHandler extends ChannelInboundHandlerAdapter {
+
+    private final ImClient imClient;
+
+    public ImClientHandler(ImClient imClient) {
+        this.imClient = imClient;
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        this.imClient.reconnect();
+    }
+
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         // 代表建立连接完毕
@@ -35,7 +47,7 @@ public class ImClientHandler extends ChannelInboundHandlerAdapter {
                 Authentication.Response authenticateResponse = Authentication.Response.parseFrom(response.getBody());
                 System.out.println("认证请求收到响应：" + authenticateResponse);
             }
-            if (response.getRequestCmd() == CMD.SEND_MESSAGE.getType()){
+            if (response.getRequestCmd() == CMD.SEND_MESSAGE.getType()) {
                 MessageSend.Response messageSendResponse = MessageSend.Response.parseFrom(response.getBody());
                 System.out.println("客户端收到发送单聊消息的响应，messageId= " + messageSendResponse.getMessageId());
             }

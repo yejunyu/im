@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e425f7de-0789-4820-bb6b-368ada033265" name="Changes" comment="feat(core): gateway和dispatcher分发系统">
-      <change afterPath="$PROJECT_DIR$/biz/src/main/java/com/yejunyu/im/biz/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/JedisManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-tcp/sql/boot.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biz/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/biz/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/DispatcherHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/GatewayInstanceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/GatewayInstanceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/KafkaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/com/yejunyu/im/dispathcer/KafkaManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/JedisManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-tcp/src/main/java/com/yejunyu/im/gateway/tcp/JedisManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/MessageSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/ImSend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" beforeDir="false" afterPath="$PROJECT_DIR$/protocal/src/main/java/com/yejunyu/im/common/CMD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/com/yejunyu/im/sdk/ImClientHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +60,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e997a4304681e8e8b6b40018ef886a83&quot;
+    &quot;spring.configuration.checksum&quot;: &quot;17b307ee1e7fc3cd85e94d9301a6cc11&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -229,6 +220,10 @@
       <workItem from="1673277327864" duration="3023000" />
       <workItem from="1673448374881" duration="2269000" />
       <workItem from="1673531816490" duration="8467000" />
+      <workItem from="1673619579977" duration="1770000" />
+      <workItem from="1673624977315" duration="712000" />
+      <workItem from="1673799209599" duration="1407000" />
+      <workItem from="1673825929140" duration="1497000" />
     </task>
     <task id="LOCAL-00001" summary="feat(core): init">
       <created>1671205216707</created>

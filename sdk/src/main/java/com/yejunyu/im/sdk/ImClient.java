@@ -12,9 +12,6 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.DelimiterBasedFrameDecoder;
-import io.netty.handler.codec.string.StringDecoder;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 /**
  * @Author yjy
@@ -35,6 +32,8 @@ public class ImClient {
      */
     private SocketChannel socketChannel;
 
+    private volatile boolean isConnected;
+
 
     public void connect(String host, int port) throws Exception {
         this.threadGroup = new NioEventLoopGroup();
@@ -49,16 +48,15 @@ public class ImClient {
 //                        ByteBuf delimiter = Unpooled.copiedBuffer(DELIMITER.getBytes());
 //                        socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
 //                        socketChannel.pipeline().addLast(new StringDecoder());
-                        socketChannel.pipeline().addLast(new ImClientHandler());
+                        socketChannel.pipeline().addLast(new ImClientHandler(ImClient.this));
                     }
                 });
-        System.out.println("完成netty客户端的配置");
         ChannelFuture future = client.connect(host, port);
-        System.out.println("发起对tcp接入系统的连接。。。");
+        System.out.println(host + port + " : 客户端发起对tcp接入系统的连接。。。");
         future.addListener((ChannelFutureListener) channelFuture -> {
             if (channelFuture.isSuccess()) {
                 socketChannel = (SocketChannel) channelFuture.channel();
-                System.out.println("跟TCP接入系统完成长连接的建立");
+                System.out.println(host + port + " : 跟TCP接入系统完成长连接的建立");
             } else {
                 channelFuture.channel().close();
                 threadGroup.shutdownGracefully();
@@ -87,11 +85,9 @@ public class ImClient {
      */
     public void authenticate(String uid, String token) {
         ByteBuf byteBuf = assembleProtobuf(uid, token);
-
-        // 这样接收不到信息
-//        String message = "发起用户认证|" + uid + "|" + token + "$_";
         socketChannel.writeAndFlush(byteBuf);
-        System.out.println("向TCP接入系统发起用户认证请求");
+        System.out.println(uid + " : 向TCP接入系统发起用户认证请求");
+
 
     }
 
@@ -136,5 +132,9 @@ public class ImClient {
     public void close() throws Exception {
         this.socketChannel.close();
         this.threadGroup.shutdownGracefully();
+    }
+
+    public void connected(){
+        this.isConnected = true;
     }
 }
